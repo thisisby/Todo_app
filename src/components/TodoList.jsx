@@ -40,14 +40,12 @@ const TodoList = ({ today }) => {
           <div className="text-xl semibold mb-2">Completed Tasks</div>
           {todos
             .filter((todo) => {
-              if (todo.date === currentDate) {
-                if (search === "") {
-                  return todo;
-                } else if (
-                  todo.name.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return todo;
-                }
+              if (search === "") {
+                return todo;
+              } else if (
+                todo.name.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return todo;
               }
             })
             .map((todo, index) =>
